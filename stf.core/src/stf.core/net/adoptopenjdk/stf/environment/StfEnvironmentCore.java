@@ -516,14 +516,6 @@ public class StfEnvironmentCore {
 		return JavaVersion.getInstance(this).getJavaVersion();
 	}
 	
-	/**
-	 * @return the java version with the format as 90 for Java 9,
-	 * 80 for Java 8 and so forth.
-	 * @throws StfException if an unknown JVM release has been found.
-	 */
-	public String getJavaVersionCode() throws StfException {
-		return JavaVersion.getInstance(this).getJavaVersionCode();
-	}
 	
 	/**
 	 * @return true if version of Java used in the execution stage is an IBM JVM.

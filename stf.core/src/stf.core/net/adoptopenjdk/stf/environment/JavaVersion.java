@@ -210,35 +210,7 @@ public class JavaVersion {
 	public boolean isJava11() throws StfException {
 		return javaVersionOutput.trim().startsWith("java version \"11");
 	}
-	
-	/**
-	 * @return the java version with the format as a single digit.
-	 * eg, 6, 7, 8 or 9, 10, 11 etc
-	 * @return int containing the java version number.
-	 * @throws StfException if an unknown JVM release has been found.
-	 */
-	public int getJavaVersion() throws StfException {
-		if (isJava6()) {
-			return 6;
-		} else if (isJava7()) {
-			return 7;
-		} else if (isJava8()) {
-			return 8;
-		} else if (isJava9()) {
-			return 9;
-		} else if (isJava10()) {
-			return 10;
-		} else if (isJava11()) {
-			return 11;
-		} else {
-			throw new StfException("Unknown JVM release: " + PlatformFinder.getPlatformAsString());
-		}
-	}
-	
-	// Return jvm version as 60, 70, 80 or 90, 100 etc
-	public String getJavaVersionCode() throws StfException {
-		return getJavaVersion() + "0";
-	}
+
 	
 	public boolean isIBMJvm() throws StfException {
 		return (javaVersionOutput.contains("IBM") | javaVersionOutput.contains("OpenJ9"));
